@@ -8,9 +8,9 @@ namespace AirportsConnections.Library.Graphs
         {
             Name = name;
         }
+
         public string Name { get; private set; }
 
         public bool IsTraveled { get; set; }
-        
     }
 }

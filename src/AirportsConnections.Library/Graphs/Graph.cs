@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+
 //https://bitbucket.org/boriscosic/backend-flitetrakr/src/0ee9ae830663fd24fd162986da57b7c931414817/src/main/java/com/boriscosic/flitetrakr/graph/Graph.java?at=master&fileviewer=file-view-default
 namespace AirportsConnections.Library.Graphs
 {
@@ -52,10 +53,10 @@ namespace AirportsConnections.Library.Graphs
         /// <param name="iterations">How many times to iterate</param>
         /// <returns>Return list of paths that were iterated.</returns>
         public IList<string> Depth(string route, int iterations)
-        {            
+        {
             _traversed = new List<string>();
             var start = route.Split('-');
-            var queue = new Queue<string>();            
+            var queue = new Queue<string>();
             queue.Enqueue(start[0]);
             Iterate(queue, string.Empty, iterations * _edges.Count);
             return _traversed;
@@ -128,7 +129,7 @@ namespace AirportsConnections.Library.Graphs
 
             _distance.Add(path[0], 0);
 
-            var quest = new List<string> {path[0]};
+            var quest = new List<string> { path[0] };
 
             while (quest.Count > 0)
             {
