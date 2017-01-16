@@ -11,9 +11,10 @@ namespace AirportsConnections.Library.Queries
         {
             var question = str.Replace("(?i)\\s+to\\s+|\\s+and\\s+", "-");
             SetType(question);
+            SetNumber(question);
             SetValue(question);
             SetRoute(question);
-            SetNumber(question);
+            
         }
 
         public int Number { get; private set; }
@@ -27,10 +28,19 @@ namespace AirportsConnections.Library.Queries
         /// <param name="question"></param>
         private void SetNumber(string question)
         {
-            var parts = question.Split(' ');
-            var digits = parts[0].Replace("[^\\d]", "");
-            var isNumber = digits.Length > 0 && parts.Length > 0;
-            Number = isNumber ? int.Parse(digits) : int.MaxValue;
+            /*
+               String[] parts = question.split(" ");
+        String digits = parts[0].replaceAll("[^\\d]", "");
+        number = digits.length() > 0 && parts.length > 0 ? Integer.parseInt(digits) : Integer.MAX_VALUE;
+
+             */
+            const string pattern = "\\d+";
+            var regex = new Regex(pattern);
+            var matcher = regex.Match(question);
+            var num = int.MaxValue;
+            if (matcher.Success)
+                int.TryParse(matcher.Groups[0].Value, out num);
+            Number = num;
         }
 
         /// <summary>
@@ -43,13 +53,27 @@ namespace AirportsConnections.Library.Queries
 
             //Pattern pattern = Pattern.compile("([A-Z]{3})(-[A-Z]{3}){1,9}(\\s|\\?$|$)");
             //Matcher matcher = pattern.matcher(question);
+            var q = replace(question);
 
             const string pattern = "([A-Z]{3})(-[A-Z]{3}){1,9}(\\s|\\?$|$)";
             var regex = new Regex(pattern);
-            var matcher = regex.Match(question);
+            var matcher = regex.Match(q);
 
             if (matcher.Success)
                 Route = matcher.Groups[0].Value.Replace("?", "").Trim();
+        }
+
+        //https://msdn.microsoft.com/en-us/library/ewy2t5e0(v=vs.110).aspx
+        private string replace(string input)
+        {
+            return input.ToUpperInvariant().Replace(" AND ", "-").Replace(" TO ", "-");
+            var pattern = ".*to*.";
+            string replacement = "-";
+            Regex rgx = new Regex(pattern);
+
+            string result = rgx.Replace(input, replacement);
+            var s = Regex.Replace(input, ".*to*.", m => "-");
+            return result;
         }
 
         /// <summary>
@@ -59,6 +83,7 @@ namespace AirportsConnections.Library.Queries
         private void SetType(string question)
         {
             Type = Queries.Type.Unknown;
+            var q = replace(question);
 
             var patterns = new Dictionary<Type, string>
             {
@@ -73,7 +98,7 @@ namespace AirportsConnections.Library.Queries
             foreach (var pattern in patterns)
             {
                 var regex = new Regex(pattern.Value);
-                var matcher = regex.Match(question);
+                var matcher = regex.Match(q);
                 if (matcher.Success)
                 {
                     Type = pattern.Key;
@@ -111,9 +136,16 @@ namespace AirportsConnections.Library.Queries
 
             const string pattern = "\\d+";
             var regex = new Regex(pattern);
-            var input = question.Replace("#\\d+: ", string.Empty);
-            var matcher = regex.Match(input);
-            Value = matcher.Success ? int.Parse(matcher.Groups[0].Value) : 0;
+            var matcher = regex.Match(question);
+            var num = 0;
+            if (matcher.Success)
+            {
+                var v = matcher.Groups[0].Value;
+                var idx = matcher.Groups[0].Index + v.Length;
+                matcher = regex.Match(question.Substring(idx));
+                int.TryParse(matcher.Groups[0].Value, out num);
+            }
+            Value = num;
         }
     }
 }

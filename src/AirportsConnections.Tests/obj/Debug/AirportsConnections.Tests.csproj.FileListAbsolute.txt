@@ -1,0 +1,10 @@
+C:\Users\eduar\Documents\Visual Studio 2015\Projects\AirportsConnections\src\AirportsConnections.Tests\bin\Debug\AirportsConnections.Tests.dll.config
+C:\Users\eduar\Documents\Visual Studio 2015\Projects\AirportsConnections\src\AirportsConnections.Tests\bin\Debug\AirportsConnections.Tests.dll
+C:\Users\eduar\Documents\Visual Studio 2015\Projects\AirportsConnections\src\AirportsConnections.Tests\bin\Debug\AirportsConnections.Tests.pdb
+C:\Users\eduar\Documents\Visual Studio 2015\Projects\AirportsConnections\src\AirportsConnections.Tests\bin\Debug\AirportsConnections.Library.dll
+C:\Users\eduar\Documents\Visual Studio 2015\Projects\AirportsConnections\src\AirportsConnections.Tests\bin\Debug\nunit.framework.dll
+C:\Users\eduar\Documents\Visual Studio 2015\Projects\AirportsConnections\src\AirportsConnections.Tests\bin\Debug\AirportsConnections.Library.pdb
+C:\Users\eduar\Documents\Visual Studio 2015\Projects\AirportsConnections\src\AirportsConnections.Tests\bin\Debug\nunit.framework.xml
+C:\Users\eduar\Documents\Visual Studio 2015\Projects\AirportsConnections\src\AirportsConnections.Tests\obj\Debug\AirportsConnections.Tests.csprojResolveAssemblyReference.cache
+C:\Users\eduar\Documents\Visual Studio 2015\Projects\AirportsConnections\src\AirportsConnections.Tests\obj\Debug\AirportsConnections.Tests.dll
+C:\Users\eduar\Documents\Visual Studio 2015\Projects\AirportsConnections\src\AirportsConnections.Tests\obj\Debug\AirportsConnections.Tests.pdb

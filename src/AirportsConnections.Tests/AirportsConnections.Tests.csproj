@@ -53,6 +53,7 @@
     <Compile Include="Queries\QueryTest.cs" />
     <Compile Include="Answers\AnswerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\QuestionTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

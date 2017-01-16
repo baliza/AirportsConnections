@@ -17,9 +17,7 @@ namespace AirportsConnections.Library.Answers
         {
             if (string.IsNullOrEmpty(answer))
                 return $"{number}: No such connection found!";
-            if (number == int.MinValue)
-                return number.ToString();
-            return $"#{number}: {answer}";
+            return number == int.MinValue ? number.ToString() : $"#{number}: {answer}";
         }
 
         /// <summary>

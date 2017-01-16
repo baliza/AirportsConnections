@@ -1,0 +1,5 @@
+C:\Users\eduar\Documents\Visual Studio 2015\Projects\AirportsConnections\src\AirportsConnections.Library\bin\Debug\AirportsConnections.Library.dll
+C:\Users\eduar\Documents\Visual Studio 2015\Projects\AirportsConnections\src\AirportsConnections.Library\bin\Debug\AirportsConnections.Library.pdb
+C:\Users\eduar\Documents\Visual Studio 2015\Projects\AirportsConnections\src\AirportsConnections.Library\obj\Debug\AirportsConnections.Library.csprojResolveAssemblyReference.cache
+C:\Users\eduar\Documents\Visual Studio 2015\Projects\AirportsConnections\src\AirportsConnections.Library\obj\Debug\AirportsConnections.Library.dll
+C:\Users\eduar\Documents\Visual Studio 2015\Projects\AirportsConnections\src\AirportsConnections.Library\obj\Debug\AirportsConnections.Library.pdb
